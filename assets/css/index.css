@@ -1,0 +1,13 @@
+#books-list{
+    display: flex;
+    max-width: 800px;
+}
+
+.book{
+    width: 320px;
+    height: auto;
+    padding: 10px;
+}
+img{
+    max-width: 320px;
+}
