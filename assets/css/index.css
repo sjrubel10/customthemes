@@ -1,9 +1,12 @@
 #books-list{
-    display: flex;
-    max-width: 800px;
+    display: block;
+    width: calc( 100% - 20px );
+    margin: 10px;
 }
 
 .book{
+    display: block;
+    float: left;
     width: 320px;
     height: auto;
     padding: 10px;

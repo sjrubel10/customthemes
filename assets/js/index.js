@@ -1,8 +1,9 @@
 
 function display_post_data( data ){
+    console.log( data );
     let booksList = jQuery('#books-list');
     jQuery.each(data, function(index, book) {
-        let url = myInfoVars.site_url+"book/?id="+book.id;
+        let url = book.post_url;
         let bookElement = `
                 <div class="book">
                     <h2><a href="${url}">${book.title}</a></h2>

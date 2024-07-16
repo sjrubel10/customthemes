@@ -47,8 +47,9 @@ function prefix_get_endpoint_phrase( WP_REST_Request $request ): WP_Error|WP_RES
         return new WP_Error('invalid_nonce', __('Invalid nonce.', 'books-plugin'), array('status' => 403));
     }
     $args = array(
-        'post_type' => 'book',
+        'post_type' => 'product',
         'posts_per_page' => -1,
+        'post_status' => 'publish',
     );
 
     $query = new WP_Query( $args );
@@ -64,6 +65,7 @@ function prefix_get_endpoint_phrase( WP_REST_Request $request ): WP_Error|WP_RES
                 'content' => get_the_content(),
                 'image' => get_the_post_thumbnail_url(),
                 'meta' => get_post_meta(get_the_ID()),
+                'post_url' => get_permalink(),
             );
             $post_ids = get_the_ID();
         }
